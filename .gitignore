@@ -1,0 +1,15 @@
+# Служебные файлы среды разработки
+.idea/
+*.iml
+out/
+__pycache__/
+*.pyc
+
+# Результаты сборки
+target/
+*.class
+*.jar
+
+# Временные файлы ОС
+Thumbs.db
+.DS_Store
