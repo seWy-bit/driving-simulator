@@ -1,0 +1,110 @@
+{
+  "students": [
+    {
+      "student_id": 101,
+      "full_name": "Петров Дмитрий Константинович",
+      "passport_data": "4518 920114",
+      "category": "B",
+      "phone_number": "+7 (999) 123-45-67",
+      "medical_cert_number": "МС-2026-7819"
+    }
+  ],
+  "instructors": [
+    {
+      "instructor_id": 201,
+      "full_name": "Иванов Сергей Павлович",
+      "license_number": "ИНСТ-77-04821",
+      "category": "B, C",
+      "phone_number": "+7 (916) 456-78-90"
+    }
+  ],
+  "exercises": [
+    {
+      "exercise_id": 1,
+      "title": "Упражнение № 1 «Параллельная парковка задним ходом»",
+      "max_duration_sec": 120,
+      "max_penalty_points": 5,
+      "reference_centerline": [
+        [0.0, 2.0],
+        [10.0, 2.0],
+        [20.0, 2.0],
+        [30.0, 2.0],
+        [40.0, 2.0]
+      ],
+      "forbidden_zones": [
+        {
+          "zone_id": "FZ-01",
+          "name": "Запретная зона левой сплошной разметки автодрома",
+          "rule_code": "1.1",
+          "polygon": [
+            [-5.0, 3.5],
+            [45.0, 3.5],
+            [45.0, 5.0],
+            [-5.0, 5.0]
+          ]
+        },
+        {
+          "zone_id": "FZ-02",
+          "name": "Зона контрольных оградительных конусов парковочного кармана",
+          "rule_code": "1.2",
+          "polygon": [
+            [12.0, 0.0],
+            [18.0, 0.0],
+            [18.0, 0.8],
+            [12.0, 0.8]
+          ]
+        }
+      ]
+    }
+  ],
+  "penalty_rules": [
+    {
+      "violation_type_id": 1,
+      "code": "1.1",
+      "description": "Пересечение сплошной линии разметки автодрома или выезд за габариты упражнения",
+      "penalty_points": 5
+    },
+    {
+      "violation_type_id": 2,
+      "code": "1.2",
+      "description": "Сбивание разметочного оборудования (конусов) или наезд на ограждение",
+      "penalty_points": 3
+    },
+    {
+      "violation_type_id": 3,
+      "code": "2.1",
+      "description": "Превышение нормативного значения показателя бокового рыскания (SDLP > 0.40 м)",
+      "penalty_points": 2
+    }
+  ],
+  "driving_session": {
+    "session_id": 3001,
+    "student_id": 101,
+    "instructor_id": 201,
+    "exercise_id": 1,
+    "vehicle_reg_number": "О721КМ777",
+    "start_time": "2026-10-31T10:15:00"
+  },
+  "raw_telemetry": [
+    {"timestamp_sec": 0.0, "coord_x": 0.00, "coord_y": 2.05, "speed_kmh": 0.0, "steering_angle_deg": 0.0},
+    {"timestamp_sec": 1.0, "coord_x": 2.10, "coord_y": 2.08, "speed_kmh": 7.5, "steering_angle_deg": 1.2},
+    {"timestamp_sec": 2.0, "coord_x": 4.25, "coord_y": 2.15, "speed_kmh": 8.0, "steering_angle_deg": 2.5},
+    {"timestamp_sec": 3.0, "coord_x": 6.30, "coord_y": 2.30, "speed_kmh": 8.2, "steering_angle_deg": 4.1},
+    {"timestamp_sec": 4.0, "coord_x": 8.40, "coord_y": 2.20, "speed_kmh": 7.8, "steering_angle_deg": 1.0},
+    {"timestamp_sec": 5.0, "coord_x": 10.50, "coord_y": 1.40, "speed_kmh": 7.1, "steering_angle_deg": -6.5},
+    {"timestamp_sec": 6.0, "coord_x": 12.60, "coord_y": 0.65, "speed_kmh": 6.5, "steering_angle_deg": -10.2},
+    {"timestamp_sec": 7.0, "coord_x": 14.50, "coord_y": 0.45, "speed_kmh": 5.0, "steering_angle_deg": -12.0},
+    {"timestamp_sec": 8.0, "coord_x": 16.20, "coord_y": 0.55, "speed_kmh": 4.2, "steering_angle_deg": 6.5},
+    {"timestamp_sec": 9.0, "coord_x": 18.10, "coord_y": 1.85, "speed_kmh": 5.5, "steering_angle_deg": 14.0},
+    {"timestamp_sec": 10.0, "coord_x": 20.30, "coord_y": 2.10, "speed_kmh": 6.8, "steering_angle_deg": 2.0},
+    {"timestamp_sec": 11.0, "coord_x": 22.50, "coord_y": 2.20, "speed_kmh": 7.2, "steering_angle_deg": 1.5},
+    {"timestamp_sec": 12.0, "coord_x": 24.80, "coord_y": 2.15, "speed_kmh": 7.5, "steering_angle_deg": -1.0},
+    {"timestamp_sec": 13.0, "coord_x": 27.00, "coord_y": 2.10, "speed_kmh": 7.0, "steering_angle_deg": -0.5},
+    {"timestamp_sec": 14.0, "coord_x": 29.10, "coord_y": 2.08, "speed_kmh": 6.4, "steering_angle_deg": 0.0},
+    {"timestamp_sec": 15.0, "coord_x": 31.20, "coord_y": 2.05, "speed_kmh": 6.0, "steering_angle_deg": -0.5},
+    {"timestamp_sec": 16.0, "coord_x": 33.40, "coord_y": 1.98, "speed_kmh": 5.8, "steering_angle_deg": 0.5},
+    {"timestamp_sec": 17.0, "coord_x": 35.50, "coord_y": 2.02, "speed_kmh": 5.0, "steering_angle_deg": 0.0},
+    {"timestamp_sec": 18.0, "coord_x": 37.60, "coord_y": 2.00, "speed_kmh": 3.2, "steering_angle_deg": 0.0},
+    {"timestamp_sec": 19.0, "coord_x": 39.70, "coord_y": 2.01, "speed_kmh": 0.0, "steering_angle_deg": 0.0}
+  ]
+}
