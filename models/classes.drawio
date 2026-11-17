@@ -1,0 +1,406 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0">
+  <diagram id="diag_UML_Classes" name="Диаграмма классов">
+    <mxGraphModel dx="2478" dy="1342" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2600" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title_banner" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=5;fontFamily=Helvetica;" value="Диаграмма классов – Программный комплекс контроля заездов на автодроме" vertex="1">
+          <mxGeometry height="30" width="700" x="700" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Main" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="Main" vertex="1">
+          <mxGeometry height="70" width="420" x="110" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="Main_methods" parent="Main" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ main(args : String[]) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ displayConsoleReport(summary : SessionSummary) : void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="44" width="420" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionEvaluator" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="SessionEvaluator" vertex="1">
+          <mxGeometry height="140" width="480" x="760" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionEvaluator_attrs" parent="SessionEvaluator" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- filter : TelemetryFilter&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- sdlpCalculator : SdlpCalculator&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- boundaryChecker : BoundaryChecker&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- penaltyRules : Map&lt;String, PenaltyRule&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="480" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionEvaluator_sep" parent="SessionEvaluator" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="480" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionEvaluator_methods" parent="SessionEvaluator" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ evaluate(session : DrivingSession, window : int, maxSdlp : double) : SessionSummary&lt;/p&gt;" vertex="1">
+          <mxGeometry height="26" width="480" y="114" as="geometry" />
+        </mxCell>
+        <mxCell id="TelemetryFilter" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="TelemetryFilter" vertex="1">
+          <mxGeometry height="52" width="320" x="50" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="TelemetryFilter_methods" parent="TelemetryFilter" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ filter(rawPoints : List&lt;TelemetryPoint&gt;, windowSize : int) : List&lt;TelemetryPoint&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="26" width="320" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="MovingAverageFilter" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="MovingAverageFilter" vertex="1">
+          <mxGeometry height="52" width="350" x="60" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="MovingAverageFilter_methods" parent="MovingAverageFilter" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ filter(rawPoints : List&lt;TelemetryPoint&gt;, windowSize : int) : List&lt;TelemetryPoint&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="26" width="350" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PassThroughFilter" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="PassThroughFilter" vertex="1">
+          <mxGeometry height="52" width="260" x="310" y="527" as="geometry" />
+        </mxCell>
+        <mxCell id="PassThroughFilter_methods" parent="PassThroughFilter" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ filter(rawPoints : List&lt;TelemetryPoint&gt;, windowSize : int) : List&lt;TelemetryPoint&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="26" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SdlpCalculator" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="SdlpCalculator" vertex="1">
+          <mxGeometry height="70" width="350" x="750" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="SdlpCalculator_methods" parent="SdlpCalculator" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ calculateSdlp(pts : List&lt;TelemetryPoint&gt;, refLine : List&lt;ReferenceNode&gt;) : SdlpResult&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- getLateralOffset(px : double, py : double, refLine : List&lt;ReferenceNode&gt;) : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="44" width="350" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="BoundaryChecker" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="BoundaryChecker" vertex="1">
+          <mxGeometry height="70" width="380" x="1180" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="BoundaryChecker_methods" parent="BoundaryChecker" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ isPointInPolygon(px : double, py : double, vertices : List&lt;ZoneVertex&gt;) : boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ checkViolations(sessionId : int, pts : List&lt;...&gt;, zones : List&lt;...&gt;) : List&lt;SessionViolation&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="44" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PenaltyRule" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="PenaltyRule" vertex="1">
+          <mxGeometry height="194" width="360" x="1630" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="PenaltyRule_attrs" parent="PenaltyRule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;# violationTypeId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;# code : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;# description : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;# penaltyPoints : int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="360" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PenaltyRule_sep" parent="PenaltyRule" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="360" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="PenaltyRule_methods" parent="PenaltyRule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ isViolated(contextData : Object) : boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ formatDetails(contextData : Object) : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCode() : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getPenaltyPoints() : int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="360" y="114" as="geometry" />
+        </mxCell>
+        <mxCell id="BoundaryViolationRule" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="BoundaryViolationRule" vertex="1">
+          <mxGeometry height="70" width="270" x="1520" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="BoundaryViolationRule_methods" parent="BoundaryViolationRule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ isViolated(contextData : Object) : boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ formatDetails(contextData : Object) : String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="44" width="270" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LateralDeviationRule" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="LateralDeviationRule" vertex="1">
+          <mxGeometry height="122" width="260" x="1810" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="LateralDeviationRule_attrs" parent="LateralDeviationRule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- maxAllowedSdlp : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="26" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LateralDeviationRule_sep" parent="LateralDeviationRule" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="LateralDeviationRule_methods" parent="LateralDeviationRule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ isViolated(contextData : Object) : boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ formatDetails(contextData : Object) : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getMaxAllowedSdlp() : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="260" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DrivingSession" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="DrivingSession" vertex="1">
+          <mxGeometry height="266" width="340" x="450" y="634" as="geometry" />
+        </mxCell>
+        <mxCell id="DrivingSession_attrs" parent="DrivingSession" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- sessionId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- student : Student&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- instructor : Instructor&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- exercise : Exercise&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- startTime : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- vehicleRegNumber : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- rawTelemetry : List&lt;TelemetryPoint&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- violations : List&lt;SessionViolation&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="152" width="340" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DrivingSession_sep" parent="DrivingSession" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="340" y="178" as="geometry" />
+        </mxCell>
+        <mxCell id="DrivingSession_methods" parent="DrivingSession" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ addRawPoint(pt : TelemetryPoint) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ addViolation(v : SessionViolation) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getRawTelemetry() : List&lt;TelemetryPoint&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getViolations() : List&lt;SessionViolation&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="340" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="Exercise" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="Exercise" vertex="1">
+          <mxGeometry height="230" width="380" x="850" y="394" as="geometry" />
+        </mxCell>
+        <mxCell id="Exercise_attrs" parent="Exercise" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- exerciseId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- title : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- maxDurationSec : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- maxPenaltyPoints : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- referenceCenterline : List&lt;ReferenceNode&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- forbiddenZones : List&lt;ForbiddenZone&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="116" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Exercise_sep" parent="Exercise" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="Exercise_methods" parent="Exercise" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ addReferenceNode(x : double, y : double) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ addForbiddenZone(zone : ForbiddenZone) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getReferenceCenterline() : List&lt;ReferenceNode&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getForbiddenZones() : List&lt;ForbiddenZone&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="380" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionSummary" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="SessionSummary" vertex="1">
+          <mxGeometry height="320" width="290" x="1700" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionSummary_attrs" parent="SessionSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- sessionId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- studentName : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- instructorName : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- vehicleRegNumber : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- exerciseTitle : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- sdlpMetric : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- meanDeviation : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- maxDeviation : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- totalPenaltyPoints : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- isPassed : boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- violations : List&lt;SessionViolation&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="206" width="290" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionSummary_sep" parent="SessionSummary" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="290" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionSummary_methods" parent="SessionSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getSdlpMetric() : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getTotalPenaltyPoints() : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ isPassed() : boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getStatusString() : String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="290" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Student" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="Student" vertex="1">
+          <mxGeometry height="212" width="230" x="100" y="962" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_attrs" parent="Student" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- studentId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- fullName : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- passportData : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- category : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- phoneNumber : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- medicalCertNumber : String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="116" width="230" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_sep" parent="Student" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_methods" parent="Student" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getStudentId() : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getFullName() : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCategory() : String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="230" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Instructor" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="Instructor" vertex="1">
+          <mxGeometry height="194" width="270" x="250" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="Instructor_attrs" parent="Instructor" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- instructorId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- fullName : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- licenseNumber : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- phoneNumber : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- categories : List&lt;String&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="98" width="270" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Instructor_sep" parent="Instructor" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="270" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="Instructor_methods" parent="Instructor" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getInstructorId() : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getFullName() : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ addCategory(cat : String) : void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="270" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="TelemetryPoint" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="TelemetryPoint" vertex="1">
+          <mxGeometry height="248" width="230" x="420" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="TelemetryPoint_attrs" parent="TelemetryPoint" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- sessionId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- pointIndex : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- timestampSec : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordX : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordY : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- speedKmh : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- steeringAngleDeg : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="134" width="230" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TelemetryPoint_sep" parent="TelemetryPoint" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="230" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="TelemetryPoint_methods" parent="TelemetryPoint" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCoordX() : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCoordY() : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getTimestampSec() : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getSpeedKmh() : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="230" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionViolation" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="SessionViolation" vertex="1">
+          <mxGeometry height="302" width="250" x="780" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionViolation_attrs" parent="SessionViolation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- sessionId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- incidentNumber : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- violationTypeId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- ruleCode : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- ruleDescription : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- penaltyPoints : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- timestampOffset : Double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordX : Double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordY : Double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- zoneId : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- comment : String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="206" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionViolation_sep" parent="SessionViolation" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="250" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="SessionViolation_methods" parent="SessionViolation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getPenaltyPoints() : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getRuleCode() : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getRuleDescription() : String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="250" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ReferenceNode" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="ReferenceNode" vertex="1">
+          <mxGeometry height="158" width="190" x="880" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="ReferenceNode_attrs" parent="ReferenceNode" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- orderIndex : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordX : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordY : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="190" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ReferenceNode_sep" parent="ReferenceNode" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="190" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="ReferenceNode_methods" parent="ReferenceNode" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getOrderIndex() : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCoordX() : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCoordY() : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="190" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="ForbiddenZone" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="ForbiddenZone" vertex="1">
+          <mxGeometry height="176" width="330" x="1150" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="ForbiddenZone_attrs" parent="ForbiddenZone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- zoneId : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- exerciseId : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- ruleCode : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- name : String&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- vertices : List&lt;ZoneVertex&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="98" width="330" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ForbiddenZone_sep" parent="ForbiddenZone" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="330" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="ForbiddenZone_methods" parent="ForbiddenZone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ addVertex(x : double, y : double) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getVertices() : List&lt;ZoneVertex&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="44" width="330" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="ZoneVertex" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontFamily=Helvetica;fontSize=12;" value="ZoneVertex" vertex="1">
+          <mxGeometry height="158" width="200" x="1430" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="ZoneVertex_attrs" parent="ZoneVertex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- vertexOrder : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordX : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;- coordY : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="200" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ZoneVertex_sep" parent="ZoneVertex" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="8" width="200" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="ZoneVertex_methods" parent="ZoneVertex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;" value="&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getVertexOrder() : int&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCoordX() : double&lt;/p&gt;&lt;p style=&quot;margin:0px;line-height:18px;&quot;&gt;+ getCoordY() : double&lt;/p&gt;" vertex="1">
+          <mxGeometry height="62" width="200" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="e_main_eval" edge="1" parent="1" source="Main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;dashed=1;endArrow=open;endFill=0;strokeWidth=1.2;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" target="SessionEvaluator" value="Вызывает">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_eval_filter" edge="1" parent="1" source="SessionEvaluator_attrs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;dashed=1;endArrow=open;endFill=0;strokeWidth=1.2;exitX=0;exitY=0.951;exitDx=0;exitDy=0;entryX=0.6;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;" target="TelemetryFilter" value="Фильтрует через">
+          <mxGeometry relative="1" x="-0.045" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="182.1" />
+              <mxPoint x="680" y="220" />
+              <mxPoint x="242" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_eval_sdlp" edge="1" parent="1" source="SessionEvaluator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;dashed=1;endArrow=open;endFill=0;strokeWidth=1.2;exitX=0.35;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="SdlpCalculator" value="Рассчитывает SDLP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_eval_bound" edge="1" parent="1" source="SessionEvaluator_methods" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;dashed=1;endArrow=open;endFill=0;strokeWidth=1.2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.4;entryY=0.0;entryDx=0;entryDy=0;" target="BoundaryChecker" value="Проверяет зоны">
+          <mxGeometry relative="1" x="-0.116" as="geometry" />
+        </mxCell>
+        <mxCell id="e_eval_rule" edge="1" parent="1" source="SessionEvaluator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;dashed=1;endArrow=open;endFill=0;strokeWidth=1.2;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="PenaltyRule" value="Оценивает по">
+          <mxGeometry relative="1" x="0.2893" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="180" />
+              <mxPoint x="1810" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_eval_sess" edge="1" parent="1" source="SessionEvaluator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;dashed=1;endArrow=open;endFill=0;strokeWidth=1.2;exitX=0.2;exitY=1.0;exitDx=0;exitDy=0;entryX=0.4;entryY=0.0;entryDx=0;entryDy=0;" target="DrivingSession" value="Обрабатывает">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="856" y="240" />
+              <mxPoint x="586" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_eval_sum" edge="1" parent="1" source="SessionEvaluator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;dashed=1;endArrow=open;endFill=0;strokeWidth=1.2;exitX=1.0;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="SessionSummary" value="Формирует">
+          <mxGeometry relative="1" x="0.0809" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="160" />
+              <mxPoint x="2100" y="160" />
+              <mxPoint x="2100" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_real_mov" edge="1" parent="1" source="MovingAverageFilter" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;endArrow=block;endFill=0;strokeWidth=1.5;dashed=1;exitX=0.5;exitY=0.0;exitDx=0;exitDy=0;entryX=0.296;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;" target="TelemetryFilter_methods" value="Реализует">
+          <mxGeometry relative="1" x="0.0218" as="geometry" />
+        </mxCell>
+        <mxCell id="e_real_pass" edge="1" parent="1" source="PassThroughFilter" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;endArrow=block;endFill=0;strokeWidth=1.5;dashed=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="TelemetryFilter" value="Реализует">
+          <mxGeometry relative="1" x="-0.0618" as="geometry" />
+        </mxCell>
+        <mxCell id="e_inh_bound" edge="1" parent="1" source="BoundaryViolationRule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;endArrow=block;endFill=0;strokeWidth=1.5;dashed=0;exitX=0.5;exitY=0.0;exitDx=0;exitDy=0;entryX=0.35;entryY=1.0;entryDx=0;entryDy=0;" target="PenaltyRule" value="Наследует">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_inh_lat" edge="1" parent="1" source="LateralDeviationRule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;endArrow=block;endFill=0;strokeWidth=1.5;dashed=0;exitX=0.5;exitY=0.0;exitDx=0;exitDy=0;entryX=0.75;entryY=1.0;entryDx=0;entryDy=0;" target="PenaltyRule" value="Наследует">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sess_stud" edge="1" parent="1" source="DrivingSession" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;endArrow=open;endFill=0;strokeWidth=1.2;exitX=0.0;exitY=0.4;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="Student" value="Проводится для">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="750" />
+              <mxPoint x="215" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_stud_src" connectable="0" parent="e_sess_stud" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.7591" as="geometry">
+            <mxPoint x="25" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_stud_dst" connectable="0" parent="e_sess_stud" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint x="-5" y="34" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_inst" edge="1" parent="1" source="DrivingSession" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;endArrow=open;endFill=0;strokeWidth=1.2;exitX=0.0;exitY=0.8;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="Instructor" value="Принимается">
+          <mxGeometry relative="1" x="-0.2868" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="450" y="840" />
+              <mxPoint x="385" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_inst_src" connectable="0" parent="e_sess_inst" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint x="21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_inst_dst" connectable="0" parent="e_sess_inst" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.6322" as="geometry">
+            <mxPoint x="-5" y="79" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_ex" edge="1" parent="1" source="DrivingSession" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;endArrow=open;endFill=0;strokeWidth=1.2;exitX=1.0;exitY=0.3;exitDx=0;exitDy=0;entryX=0.0;entryY=0.3;entryDx=0;entryDy=0;" target="Exercise" value="Выполняется">
+          <mxGeometry relative="1" x="0.0541" y="10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_ex_src" connectable="0" parent="e_sess_ex" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sess_ex_dst" connectable="0" parent="e_sess_ex" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sess_pt" edge="1" parent="1" source="DrivingSession" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;startArrow=diamond;startFill=1;endArrow=none;strokeWidth=1.5;exitX=0.3;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="TelemetryPoint" value="Содержит">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sess_pt_src" connectable="0" parent="e_sess_pt" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint x="8" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_pt_dst" connectable="0" parent="e_sess_pt" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint x="-5" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_viol" edge="1" parent="1" source="DrivingSession" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;startArrow=diamond;startFill=1;endArrow=none;strokeWidth=1.5;exitX=0.8;exitY=1.0;exitDx=0;exitDy=0;entryX=0.3;entryY=0.0;entryDx=0;entryDy=0;" target="SessionViolation" value="Фиксирует">
+          <mxGeometry relative="1" x="-0.2019" as="geometry">
+            <Array as="points">
+              <mxPoint x="722" y="920" />
+              <mxPoint x="855" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_viol_src" connectable="0" parent="e_sess_viol" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.2555" as="geometry">
+            <mxPoint x="-51" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sess_viol_dst" connectable="0" parent="e_sess_viol" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.7559" as="geometry">
+            <mxPoint x="-5" y="26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ex_ref" edge="1" parent="1" source="Exercise" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;startArrow=diamond;startFill=1;endArrow=none;strokeWidth=1.5;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" target="ReferenceNode" value="Задает ось">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ex_ref_src" connectable="0" parent="e_ex_ref" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ex_ref_dst" connectable="0" parent="e_ex_ref" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint x="-5" y="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ex_fz" edge="1" parent="1" source="Exercise" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;startArrow=diamond;startFill=1;endArrow=none;strokeWidth=1.5;exitX=0.9;exitY=1.0;exitDx=0;exitDy=0;entryX=0.4;entryY=0.0;entryDx=0;entryDy=0;" target="ForbiddenZone" value="Ограничивается">
+          <mxGeometry relative="1" x="0.1402" as="geometry">
+            <Array as="points">
+              <mxPoint x="1192" y="660" />
+              <mxPoint x="1282" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ex_fz_src" connectable="0" parent="e_ex_fz" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.4053" as="geometry">
+            <mxPoint x="-39" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ex_fz_dst" connectable="0" parent="e_ex_fz" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.2538" as="geometry">
+            <mxPoint x="40" y="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_fz_v" edge="1" parent="1" source="ForbiddenZone" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;startArrow=diamond;startFill=1;endArrow=none;strokeWidth=1.5;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ZoneVertex" value="Очерчивается">
+          <mxGeometry relative="1" x="0.3973" y="5" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_fz_v_src" connectable="0" parent="e_fz_v" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fz_v_dst" connectable="0" parent="e_fz_v" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="3..*" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sum_viol" edge="1" parent="1" source="SessionSummary" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=11;strokeColor=#000000;startArrow=diamond;startFill=0;endArrow=none;strokeWidth=1.5;exitX=0.0;exitY=0.9;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="SessionViolation" value="Включает">
+          <mxGeometry relative="1" x="0.1734" as="geometry">
+            <Array as="points">
+              <mxPoint x="1660" y="948" />
+              <mxPoint x="1660" y="1140" />
+              <mxPoint x="1030" y="1140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sum_viol_src" connectable="0" parent="e_sum_viol" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.6073" as="geometry">
+            <mxPoint x="20" y="-109" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sum_viol_dst" connectable="0" parent="e_sum_viol" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=10;fontFamily=Helvetica;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.3915" as="geometry">
+            <mxPoint x="-226" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
