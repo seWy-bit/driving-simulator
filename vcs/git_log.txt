@@ -1,0 +1,13 @@
+e242ec1 2026-11-22 13:00:00 +0300 Петров Дмитрий Константинович docs: add code review protocol review.md and Java build instructions
+5852f21 2026-11-19 12:10:00 +0300 Петров Дмитрий Константинович fix: add sequential point_index fallback in Main deserializer (review #1)
+d97c481 2026-11-17 18:40:00 +0300 Петров Дмитрий Константинович feat: add session evaluator, UML class diagram and CLI entrypoint
+4bf69b4 2026-11-14 14:15:00 +0300 Петров Дмитрий Константинович feat: implement SdlpCalculator, BoundaryChecker ray-casting and filters
+0f766d6 2026-11-10 16:20:00 +0300 Петров Дмитрий Константинович feat: add Java OOP telemetry simulator domain model and JSON parser
+2bb6fd9 2026-11-03 14:05:39 +0300 Петров Дмитрий Константинович main and test data were added
+f39ab81 2026-11-02 15:55:12 +0300 Петров Дмитрий Константинович readme file was modified
+3129cfb 2026-11-02 15:48:20 +0300 Петров Дмитрий Константинович Procedural module for monitoring spatial constraints on a driving range was added
+cc807d6 2026-10-31 15:52:33 +0300 Петров Дмитрий Константинович procedure math telemetry calculation module was added
+0f34247 2026-10-05 22:45:41 +0300 Петров Дмитрий Константинович readme: string docs was deleted
+4973f5f 2026-10-05 22:39:35 +0300 Петров Дмитрий Константинович Agent host session 637942dd-4846-4683-98cf-c76088e2e33d - baseline checkpoint
+5f0f8a1 2026-10-04 22:40:53 +0300 seWy Gitignore was added
+de8823a 2026-10-03 22:47:31 +0300 seWy Readme was added
